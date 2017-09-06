@@ -1,0 +1,122 @@
+.articles {
+  font-size: 0;
+
+  &-list {
+    .list-reset;
+    margin-left: -20px;
+    margin-top: -36px;
+
+    &_inversed .articles {
+
+      &-list-item {
+        float: right;
+      }
+    }
+
+    &-item {
+      float: left;
+      width: 300px;
+      margin-left: 20px;
+      margin-top: 36px;
+
+      &_big {
+        width: 620px;
+      }
+
+      &_big .articles {
+
+        &-list-item {
+
+          &-figure {
+            width: 620px;
+            height: 480px;
+          }
+
+          &__link {
+            font-size: 24px;
+          }
+        }
+      }
+
+      &_long {
+        width: 300px;
+      }
+
+      & + &_long {
+        float: right;
+      }
+
+      &_long .articles {
+
+        &-list-item {
+
+          &-figure {
+            width: 300px;
+            height: 480px;
+          }
+
+          &__link {
+            font-size: 24px;
+          }
+        }
+      }
+
+      &-figure {
+        position: relative;
+        width: 300px;
+        height: 180px;
+        overflow: hidden;
+
+        &:hover .feed-overlay {
+          opacity: 1;
+        }
+
+        &:hover .articles-list-item__section {
+          opacity: 0;
+        }
+
+        &__image {
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      &__section {
+        opacity: 1;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        padding: 6px 20px;
+        font-size: 13px;
+        font-family: 'OpenSans';
+        text-transform: uppercase;
+        background-color: @white;
+        color: @default-gray;
+        .transition;
+      }
+
+      &-title {
+        margin: 0;
+        padding: 15px 30px;
+        text-align: center;
+
+        &:hover .articles-list-item__link {
+          background-color: fadeout(@default, 70%);
+          box-shadow: 10px 0 0 fadeout(@default, 70%), -10px 0 0 fadeout(@default, 70%);
+        }
+      }
+
+      &__link {
+        display: inline;
+        font-family: 'RalewayBold';
+        font-size: 18px;
+        line-height: 1.5;
+        color: @default-gray;
+        text-decoration: none;
+        .transition;
+      }
+    }
+  }
+}

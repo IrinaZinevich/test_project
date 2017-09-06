@@ -1,0 +1,98 @@
+.header {
+  position: relative;
+  height: 112px;
+  padding-left: 358px;
+  background: url('@{image-path}header_bg.png') no-repeat center right;
+  border-bottom: 1px solid darken(@white, 8%);
+  font-size: 0;
+
+  &__logo {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 145px;
+    height: 75px;
+    background: url('@{image-path}clutch_logo.svg') no-repeat center right;
+  }
+
+  &-search {
+    margin-left: 5px;
+    height: 100%;
+
+    &__icon, &__button {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: @default-search;
+      .transition;
+
+      &:hover {
+        background-color: darken(@default-search, 20%);
+      }
+
+      &:before {
+        content: '';
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        background: url('@{image-path}icons.png') no-repeat;
+        background-position: 0px -58px;
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      margin-top: -18px;
+      cursor: pointer;
+    }
+
+    &-form {
+      display: none;
+      opacity: 0;
+      width: 0;
+      position: relative;
+      height: 100%;
+      padding-right: 40px;
+      background-color: @white;
+      .transition('all', 'ease-in', '.4s');
+
+      &.is-shown{
+        display: block;
+        opacity: 1;
+        width: 100%;
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+    }
+
+    &__input {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      border-bottom: 2px dashed @default;
+      font-size: 14px;
+      font-family: 'NotoSerifItalic';
+      color: darken(@white,45%);
+
+      &::-webkit-input-placeholder {
+
+      }
+    }
+
+    &__button {
+      position: absolute;
+      top: 50%;
+      margin-top: -18px;
+      right: 0;
+    }
+  }
+}

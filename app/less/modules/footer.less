@@ -1,0 +1,69 @@
+.footer {
+  position: relative;
+  padding: 50px 0;
+  font-size: 0;
+
+  &__logo {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 135px;
+    height: 70px;
+    opacity: 0.8;
+    background: url('@{image-path}clutch_logo.svg') no-repeat center right;
+  }
+
+  &-copyright {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 165px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 55px;
+      border-bottom: 3px solid darken(@white, 18%);
+    }
+
+    &__text {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 30px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: 'RalewayBold';
+      color: @default-gray;
+    }
+  }
+
+  &-nav {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 90px;
+
+    &-list {
+      .list-reset;
+
+      &-item {
+        display: inline-block;
+
+        & + & {
+          margin-left: 45px;
+        }
+      }
+    }
+
+    &__link {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: 'RalewayBold';
+      color: @default-gray;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
